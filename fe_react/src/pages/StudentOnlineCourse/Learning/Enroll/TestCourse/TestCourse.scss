@@ -1,0 +1,287 @@
+.student-test-course {
+    margin-top: 20%;
+    margin-bottom: 20%;
+
+    .test-course-overview {
+        background: white;
+        border-radius: 12px;
+        padding: 2.5rem;
+        text-align: center;
+
+        .test-name {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+
+        .test-duration {
+            font-size: 1.25rem;
+            color: #34495e;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+
+            &::before {
+                content: '⏱';
+                font-size: 1.4rem;
+            }
+        }
+
+        .test-total-question {
+            font-size: 1.25rem;
+            color: #34495e;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+
+            &::before {
+                content: '📝';
+                font-size: 1.4rem;
+            }
+        }
+
+        .ant-btn {
+            background: #3498db;
+            color: white;
+            height: 48px;
+            padding: 0 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: #2980b9;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+            }
+
+            &:active {
+                transform: translateY(0);
+            }
+        }
+    }
+}
+
+.test-interface {
+    display: flex;
+    background-color: #f5f5f5;
+
+    .timer {
+        font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            background-color: #f4f4f4;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 150px;
+            text-align: center;
+            margin: 0 auto 20px;
+    }
+
+    .submit-test {
+        text-align: center;
+        margin-top: 20px;
+
+    }
+
+
+    .test-interface-left {
+        width: 25%;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+
+        .test-course-question {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+
+            .test-course-question-item {
+                width: 40px;
+                height: 40px;
+                border: 1px solid #d9d9d9;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: all 0.3s;
+
+                &.selected {
+                    border-bottom: 15px solid var(--hust-color);
+                }
+
+                &.answered {
+                    background-color: gray;
+                    font-weight: bold;
+                    ;
+                }
+
+                &:hover {
+                    border-color: #40a9ff;
+                }
+
+                &.correct {
+                    background-color: green;
+                    color: white
+                }
+
+                &.incorrect {
+                    background-color: red;
+                    color: white
+                }
+
+            }
+        }
+    }
+
+    .test-interface-right {
+        flex: 1;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .download-section {
+            margin-top: 20px;
+            display: flex;
+            justify-content: flex-start;
+
+            .download-button {
+                min-width: 200px;
+                height: auto;
+                padding: 12px 24px;
+                background: #3498db;
+                border: none;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                font-size: 15px;
+                font-weight: 500;
+                color: white;
+                transition: all 0.3s ease;
+
+                .download-icon {
+                    font-size: 18px;
+                }
+
+                &:hover {
+                    background: #2980b9;
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+                }
+
+                &:active {
+                    transform: translateY(0);
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+
+        .test-course-question-detail {
+            background-color: white;
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+            &-content {
+                &-title {
+                    font-size: 18px;
+                    font-weight: 500;
+                    margin-bottom: 24px;
+                    color: #262626;
+                }
+
+                &-answers {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                }
+
+                &-answer {
+                    display: flex;
+                    align-items: flex-start;
+                    padding: 12px;
+                    border: 1px solid #d9d9d9;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    transition: all 0.3s;
+
+                    &:hover {
+                        background-color: #f5f5f5;
+                    }
+
+                    &.selected {
+                        border-color: #1890ff;
+                        background-color: #e6f7ff;
+                    }
+
+                    &.selected-answer {
+                        background-color: #afacac;
+                    }
+
+                    &-index {
+                        width: 28px;
+                        height: 28px;
+                        border-radius: 50%;
+                        background-color: #f0f0f0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-right: 12px;
+                        font-weight: 500;
+                    }
+
+                    &-content {
+                        flex: 1;
+                        display: flex;
+                        align-items: center;
+                        gap: 12px;
+
+                        input {
+                            margin-right: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1600px) {
+    .test-interface {
+        .test-interface-left {
+            .test-course-question {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .test-interface {
+        flex-direction: column;
+
+        .test-interface-left {
+            width: 100%;
+            order: 2;
+        }
+
+        .test-interface-right {
+            order: 1;
+        }
+    }
+}

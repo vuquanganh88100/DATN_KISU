@@ -1,0 +1,301 @@
+.online-course-add {
+  .online-course-add-header {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+
+    p {
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--hust-color);
+    }
+  }
+}
+.chapterWeight {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  margin-top: 20px;
+  min-height: 400px;
+
+  .chapter-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 50px;
+  }
+
+  .ant-form-item {
+    margin: 0;
+  }
+  .ant-form-item-label > label::after {
+    content: '' !important;
+  }
+
+  .ant-form-item-row {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .ant-form-item-label {
+    flex: 0 0 180px;
+    text-align: left;
+    padding-right: 12px;
+
+    label {
+      height: auto;
+      white-space: normal;
+ 
+    }
+  }
+  .ant-input-number {
+    width: 400px;
+    display: block;
+  }
+
+  .chapterWeight-header {
+    margin-bottom: 30px;
+    color: var(--hust-color);
+    
+    p {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+
+  .button-chapter {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+  }
+
+  .button-chapter-prev,
+  .button-chapter-next {
+    width: 150px;
+    height: 50px;
+  }
+}
+
+
+.info-course-form {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  margin-top: 20px;
+  min-height: 400px;
+  height: auto;
+
+  .info-course-form-header {
+    width: 100%;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--hust-color);
+    border-bottom: 2px solid #f0f0f0;
+  }
+
+  .form-content-wrapper {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 24px;
+    .ant-form-item-label > label::after {
+      content: '' !important;
+    }
+    .form-left-section {
+      flex: 0 0 40%;
+
+      .ant-form-item {
+        width: 100%;
+        margin-bottom: 35px;
+        position: relative;
+
+        .ant-form-item-label {
+          position: absolute;
+          top: -15px;
+          z-index: 999;
+          left: 15px;
+          background-color: #fff;
+          height: 25px;
+
+          label {
+            height: 20px;
+            margin: 0px;
+          }
+        }
+
+        .ant-select-selector {
+          min-height: 45px;
+          border-radius: 8px;
+          padding: 4px 12px;
+
+          .ant-select-selection-placeholder {
+            line-height: 36px;
+          }
+        }
+
+        .ant-input {
+          height: 45px;
+          border-radius: 8px;
+          padding: 8px 12px;
+        }
+      }
+    }
+
+    .form-right-section {
+      flex: 0 0 60%;
+      padding: 0px 20px 0px 10px;
+
+      .ant-form-item {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0;
+        position: relative;
+
+        .ant-form-item-label {
+          position: absolute;
+          top: -30px;
+          z-index: 999;
+          left: 15px;
+          background-color: #fff;
+          height: 25px;
+
+          label {
+            height: 20px;
+            margin: 0px;
+          }
+        }
+
+        .quill {
+          height: 380px;
+
+          .ql-container {
+            height: calc(100% - 42px);
+            font-size: 16px;
+            border-radius: 0 0 8px 8px;
+          }
+
+          .ql-toolbar {
+            border-radius: 8px 8px 0 0;
+          }
+
+          .ql-editor {
+            height: 100%;
+            padding: 12px 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .preview-image {
+    width: 100%;
+    margin: 0;
+    padding: 0 0 24px 0;
+
+    .dropzone {
+      border: 2px dashed #d9d9d9;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background-color: #fafafa;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        border-color: var(--hust-color);
+        background-color: #f0f0f0;
+      }
+
+      p {
+        margin: 0;
+        color: #666;
+      }
+
+      .preview-container {
+        width: 100%;
+        margin-top: 16px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: auto;
+          max-height: 300px;
+          object-fit: contain;
+          border-radius: 8px;
+        }
+      }
+    }
+
+    .ant-form-item-label {
+      position: relative;
+      top: 0;
+      left: 0;
+      padding: 0;
+      background: none;
+      margin-bottom: 8px;
+
+      label {
+        height: 20px;
+        margin: 0px;
+      }
+    }
+
+    .dropzone {
+      border: 2px dashed #d9d9d9;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background-color: #fafafa;
+
+      &:hover {
+        border-color: var(--hust-color);
+        background-color: #f0f0f0;
+      }
+
+      p {
+        margin: 0;
+        color: #666;
+      }
+
+      img {
+        max-width: 100%;
+        max-height: 200px;
+        margin-top: 16px;
+        border-radius: 8px;
+        object-fit: contain;
+      }
+    }
+
+    &+p {
+      margin-top: 8px;
+      color: #666;
+      text-align: center;
+    }
+  }
+
+  .button-next {
+    align-self: flex-end;
+    width: 150px;
+    height: 50px;
+    margin-top: 0;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

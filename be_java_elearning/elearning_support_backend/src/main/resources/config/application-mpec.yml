@@ -1,0 +1,140 @@
+#Cấu hình server
+server:
+  port: 8088
+  servlet:
+    context-path: /e-learning
+    encoding:
+      charset: utf-8
+      enabled: true
+logging:
+  level:
+    org.apache.kafka: ERROR
+
+# Cấu hình spring
+spring:
+  master:
+    datasource:
+      driverClassName: org.postgresql.Driver
+      url: jdbc:postgresql://els_postgres_master:5432/elearning_support_db
+      username: elearning_support_admin
+      password: els@admin
+      hikari:
+        schema: elearning_support_dev
+        pool-name: masterDataSourcePool
+  slave:
+    datasource:
+      driverClassName: org.postgresql.Driver
+      url: jdbc:postgresql://els_postgres_slave:5432/elearning_support_db
+      username: elearning_support_admin
+      password: els@admin
+      hikari:
+        schema: elearning_support_dev
+        pool-name: slaveDataSourcePool
+  # Database migration
+  flyway:
+    enabled: true
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://els_postgres_master:5432/elearning_support_db
+    user: elearning_support_admin
+    password: els@admin
+    schemas: elearning_support_dev
+    default-schema: elearning_support_dev
+  #Cấu hình Spring Data JPA
+  jpa:
+    hibernate:
+      ddlAuto: none
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comment: true
+        format_sql: true
+        default_schema: elearning_support_dev
+        jdbc:
+          batch_size: 50
+        order_inserts: true
+        order_updates: true
+        #generate_statistics: true
+  #Cấu hình servlet : upload multipart file
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 16MB
+      max-request-size: 256MB
+      file-size-threshold: 2KB
+  #Cấu hình server gửi mail
+  mail:
+    protocol: smtp
+    host: smtp.gmail.com
+    port: 587
+    username: app20222mailsv@gmail.com
+    password: jfdzigexvxbhcwoi
+    account-password: App20222@mail
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+  #            Cấu hình nếu sử dụng SSL
+  #          socketFactory:
+  #            port: 465
+  #            class: javax.net.ssl.SSLSocketFactory
+  redis:
+    host: els_redis_db
+    port: 6379
+    connect-timeout: 20000
+    username: default
+    password: els@redis
+    database: 0
+
+    #  Cấu hình kafka
+  kafka:
+    bootstrap-servers: localhost:29092,localhost:39092
+    consumer:
+      group-id: els_consumer_grp_1
+      auto-offset-reset: earliest
+    producer:
+      retries: 10000
+
+# Cấu hình Json Web Token
+jwt:
+  secretKey: ELEARNINGKsu295JdkjKHJJHW2349gfbnaf23cheh34HIMAde24
+  accessTokenExpiredMs: 100000000
+  refreshTokenExpiredMs: 100000000000
+
+
+# Cấu hình Server Cloudinary
+cloudinary:
+  cloud:
+    name: app20222-cloudinary
+    api-key: 262418987222994
+    api-secret: RpT-xRSXwTpwcR9hCyy8CWTLqLs
+
+# Cấu hình file storage
+app:
+  file-storage:
+    resource-path: /resources/**
+    default-stored-type: INTERNAL_SERVER
+  mail:
+    generate-domain: yopmail.com
+    mail-code-prefix: ELS_MAIL_
+
+# Cấu hình firebase
+firebase:
+  config: elearningsupportsystem-55777-firebase-adminsdk-8oqd8-6bb7d37704.json
+  app-name: e-learning_support_system
+
+judge0:
+  url: http://192.168.0.101/:2358
+
+# host module AI python
+python-ai-module-api:
+  api-key: apikeyels2019271820232
+  domain: http://elearning_support_ai:8089/api/scoring
+
+
+
+
+
+

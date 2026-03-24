@@ -1,0 +1,169 @@
+.statistic-problem-contest {
+  padding: 20px;
+
+  .statistic-problem-contest-header {
+    margin-bottom: 24px;
+    padding: 0 12px;
+
+    .statistic-problem-contest-title-wrapper {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+
+      p {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--hust-color);
+      }
+
+      .ant-btn-text {
+        color: var(--hust-color);
+        font-size: 20px;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.04);
+        }
+      }
+    }
+
+    .statistic-problem-contest-subtitle {
+      color: #595959;
+      font-size: 14px;
+      margin-left: 40px;
+    }
+  }
+
+  .search-filter-button {
+        margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .ant-btn-primary {
+      background-color: var(--hust-color);
+      border-color: var(--hust-color);
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+
+  .statistic-problem-contest-wrapper,
+  .statistic-problem-contest-chart {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 24px;
+
+    :global(.ant-card-head) {
+      background-color: #fafafa;
+      border-bottom: 1px solid #e8e8e8;
+      .ant-card-head-title {
+        color: var(--hust-color);
+        font-weight: 600;
+      }
+    }
+
+    :global(.ant-card-body) {
+      padding: 24px;
+    }
+
+    :global(.ant-btn-default) {
+      border-color: var(--hust-color);
+      color: var(--hust-color);
+      &:hover {
+        color: #fff;
+        background-color: var(--hust-color);
+        border-color: var(--hust-color);
+      }
+    }
+  }
+
+  .statistic-problem-contest-wrapper {
+    .statistic-problem-contest-table {
+      padding: 12px;
+
+      :global(.ant-table-thead > tr > th) {
+        background-color: #fafafa;
+        border-bottom: 2px solid #e8e8e8;
+        font-weight: 600;
+        color: #262626;
+      }
+
+      :global(.ant-table-tbody > tr:hover > td) {
+        background-color: #f5f5f5;
+      }
+
+      .ant-btn-link {
+        color: var(--hust-color);
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    :global(.ant-pagination-item-active) {
+      border-color: var(--hust-color);
+      a {
+        color: var(--hust-color);
+      }
+    }
+  }
+
+  .statistic-problem-contest-chart {
+    .statistic-problem-contest-chart-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: #262626;
+      text-align: center;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .statistic-problem-contest-chart-center-label {
+      font-size: 16px;
+      font-weight: 600;
+      fill: #262626;
+    }
+
+    .statistic-problem-contest-chart-slice-label {
+      font-size: 12px;
+      font-weight: 500;
+      fill: #595959;
+    }
+
+    .statistic-problem-contest-chart-legend-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: #595959;
+      font-size: 13px;
+
+      .statistic-problem-contest-chart-legend-count {
+        font-weight: 600;
+        color: #262626;
+      }
+    }
+  }
+}
+
+.statistic-problem-contest-tooltip {
+  background: #fff;
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 8px 12px;
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08);
+
+  .statistic-problem-contest-tooltip-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .statistic-problem-contest-tooltip-value {
+    color: #262626;
+    font-size: 13px;
+  }
+}

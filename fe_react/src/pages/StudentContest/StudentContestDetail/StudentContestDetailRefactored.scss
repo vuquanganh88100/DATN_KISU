@@ -1,0 +1,49 @@
+
+.leetcode-layout {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0; // LeetCode background
+}
+
+.leetcode-body {
+  flex: 1;
+  min-height: 0;
+  padding: 12px;
+  overflow: hidden; // Prevent body itself from scrolling
+}
+
+.leetcode-split {
+  height: 100%;
+  display: flex;
+  gap: 12px;
+  min-height: 0;
+
+  .panel {
+    flex: 1;
+    min-width: 400px; 
+    
+    &.left {
+      flex: 0 0 45%; 
+    }
+    
+    &.right {
+      flex: 1; 
+    }
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 1200px) {
+  .leetcode-split {
+    flex-direction: column;
+    overflow-y: auto;
+    
+    .panel {
+      width: 100%;
+      min-width: unset;
+      flex: none !important;
+      height: 700px; 
+    }
+  }
+}

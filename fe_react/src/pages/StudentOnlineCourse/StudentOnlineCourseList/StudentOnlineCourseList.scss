@@ -1,0 +1,102 @@
+.student-course-header {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    .student-course-search {
+        background-color: white;
+        border-radius: 10px;
+        width: 40%;
+        height: 3.5rem;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+        border: 2px solid black;
+        input {
+            background-color: transparent;
+            border: none;
+            height: 100%;
+            width: 100%;
+            margin-left: 8px;
+        }
+
+        input:focus {
+            outline: none;
+        }
+    }
+}
+.student-course-home{
+    background-color: aliceblue;
+    border: 1px solid grey;
+    padding: 10px;
+    .student-course-home-title{
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        h1{
+            font-size: 30px;
+                font-weight: 600;
+                color: var(--hust-color);
+        }
+    }
+    .student-course-tag {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 25px;
+        margin-bottom: 30px;
+    }
+    .student-course-tag button {
+        background-color: #e4e8eb;
+        border: none;
+        border-radius: 15px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+    }
+    
+    .student-course-tag button:hover {
+        background-color: rgb(248, 183, 142);
+        transform: scale(1.05);
+    }
+    
+    .student-course-tag button h3 {
+        font-size: 16px;
+        margin: 0;
+        color: #333;
+        text-align: center;
+    }
+    .ant-card {
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .ant-card-meta-title {
+        color: #2c3e50;
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+    
+    .ant-card-meta-description {
+        color: #7f8c8d;
+        line-height: 1.6;
+    }
+    
+    .ant-card-meta-description span {
+        display: block;
+        margin-bottom: 4px;
+    }
+    
+    .ant-card-meta-description span:first-child {
+        font-size: 1.2rem;
+        color: #34495e;
+        font-weight: 500;
+    }
+    
+    .ant-card-meta-description span:last-child {
+        font-size: 0.85rem;
+        color: #95a5a6;
+    }
+}

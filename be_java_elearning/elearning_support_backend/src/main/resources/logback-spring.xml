@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+  <property name="LOGS" value="./logs" />
+
+  <timestamp key="logDate" datePattern="yyyy-MM-dd"/>
+
+  <appender name="CONSOLE"
+    class="ch.qos.logback.core.ConsoleAppender">
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <Pattern>
+        %d{dd-MM-yyyy HH:mm:ss.SSS} Level:%highlight([%level]) Thread:%green([%thread]) Source:%cyan([%logger{64}.%M]) - %msg %n
+      </Pattern>
+    </layout>
+  </appender>
+
+  <appender name="ROLLING_FILE"
+    class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${LOGS}/els-backend-${logDate}_p1.log</file>
+    <encoder
+      class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <Pattern>%d %p %C{64} [%t] - %m %n</Pattern>
+    </encoder>
+
+    <rollingPolicy
+      class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!-- rollover daily and when the file reaches 25 MegaBytes -->
+      <fileNamePattern>${LOGS}/els-backend-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+      <maxHistory>7</maxHistory>
+      <totalSizeCap>512MB</totalSizeCap>
+      <timeBasedFileNamingAndTriggeringPolicy
+        class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+        <maxFileSize>16MB</maxFileSize>
+      </timeBasedFileNamingAndTriggeringPolicy>
+    </rollingPolicy>
+  </appender>
+
+<!--LOG everything at INFO level-->
+  <root level="info">
+    <appender-ref ref="ROLLING_FILE" />
+    <appender-ref ref="CONSOLE" />
+  </root>
+
+  <!-- LOG "org.apache.kafka.clients" at ERROR level -->
+  <logger name="org.apache.kafka.clients" level="error">
+    <appender-ref ref="ROLLING_FILE" />
+    <appender-ref ref="CONSOLE" />
+  </logger>
+
+</configuration>

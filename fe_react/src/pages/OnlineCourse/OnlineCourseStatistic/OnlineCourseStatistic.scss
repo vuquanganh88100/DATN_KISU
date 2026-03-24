@@ -1,0 +1,40 @@
+.student-online-course-list{
+    .student-online-course-list-header{
+        padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+        p {
+            font-size: 30px;
+            font-weight: 600;
+            color: var(--hust-color);
+          }
+    
+    }
+    .search-filter-button {
+        margin-bottom: 20px;
+      }
+      .student-online-course-list-table {
+        border: 1px solid #ccc;
+        padding: 12px;
+    
+        .ant-table-body {
+          min-height: 396px;
+        }
+    
+        .ant-table-content {
+          min-height: 500px;
+        }
+    
+        .ant-pagination-item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+    
+        .ant-table-pagination.ant-pagination {
+          margin: 12px 0;
+        }
+      }
+}

@@ -1,0 +1,26 @@
+.my-course-home {
+    background-color: aliceblue;
+    border: 1px solid grey;
+    padding: 10px;
+    margin-top: 60px;
+    height: 100%;
+
+    .my-course-home-title {
+        margin-top: 30px;
+        margin-bottom: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            font-size: 30px;
+            font-weight: 600;
+            color: var(--hust-color);
+        }
+    }
+
+    .last-time p {
+        font-size: 1.3rem;
+        color: #666;
+    }
+}
